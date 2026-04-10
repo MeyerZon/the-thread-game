@@ -1,9 +1,26 @@
 [gd_scene format=3 uid="uid://cvdbpil7u22q6"]
 
-[node name="Main" type="Control" unique_id=1975833281]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Script" uid="uid://cgaugjuxan3mx" path="res://scripts/main.gd" id="1_o5qli"]
+
+[node name="Main" type="Node" unique_id=2106700962]
+script = ExtResource("1_o5qli")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=141339745]
+
+[node name="PlayGameButton" type="Button" parent="CanvasLayer" unique_id=1779283215]
+offset_left = 412.0
+offset_top = 285.00003
+offset_right = 595.30225
+offset_bottom = 401.61435
+scale = Vector2(5.689151, 4.366747)
+text = "PLAY"
+
+[node name="LinkButton" type="LinkButton" parent="CanvasLayer" unique_id=1309647091]
+offset_left = 773.0
+offset_top = 909.0
+offset_right = 943.0
+offset_bottom = 949.0
+text = "Press Me if you dare :)"
+uri = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+
+[connection signal="pressed" from="CanvasLayer/PlayGameButton" to="." method="_on_play_game_button_pressed"]

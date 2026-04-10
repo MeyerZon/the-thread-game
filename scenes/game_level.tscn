@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dem72xq2ta74p" path="res://assets/environment/TX Tileset Grass.png" id="1_6fv2f"]
 [ext_resource type="PackedScene" uid="uid://bnt6ynbsx65dl" path="res://scenes/player.tscn" id="1_h3dka"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="3_d1hwj"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_d1hwj"]
 a = Vector2(844, 0)
@@ -18,21 +19,11 @@ b = Vector2(-1164, 4)
 [node name="Level" type="Node2D" unique_id=2056147803]
 
 [node name="BackGround" type="Sprite2D" parent="." unique_id=329126199]
-position = Vector2(576, 324)
 scale = Vector2(9.096664, 6.6236577)
 texture = ExtResource("1_6fv2f")
 
-[node name="Player" parent="." unique_id=1690763015 instance=ExtResource("1_h3dka")]
-position = Vector2(576, 324)
-script = null
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1924803685]
-limit_left = -768
-limit_top = -704
-limit_right = 1920
-limit_bottom = 1352
-
 [node name="WorldWalls" type="Node2D" parent="." unique_id=404861258]
+position = Vector2(-581, -322)
 
 [node name="LeftWallStaticBody" type="StaticBody2D" parent="WorldWalls" unique_id=1429539257]
 position = Vector2(-584, 324)
@@ -66,3 +57,23 @@ rotation = -1.5707964
 position = Vector2(20, 4.7683716e-07)
 rotation = 1.5707964
 shape = SubResource("SegmentShape2D_6fv2f")
+
+[node name="Player" parent="." unique_id=1690763015 node_paths=PackedStringArray("joystick_movement") instance=ExtResource("1_h3dka")]
+joystick_movement = NodePath("../CanvasLayer/Virtual Joystick")
+SPEED = 900.0
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1924803685]
+limit_left = -1195
+limit_top = -879
+limit_right = 1193
+limit_bottom = 871
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1999469980]
+
+[node name="Virtual Joystick" parent="CanvasLayer" unique_id=202352219 instance=ExtResource("3_d1hwj")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1210728739]
+color = Color(0.49747366, 0.49747372, 0.49747354, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1603061594]
+rotation = -5.1347585

@@ -1,32 +1,47 @@
 extends CharacterBody2D
 
-#NOTE! Applying the texture will be done from the outside.
 
 #Top Down controls, no need in falling here
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-const SPEED = 20000.0
+@export var joystick_movement : VirtualJoystick
+@export var SPEED : float
+
+func _ready() -> void:
+	print("SCRIPT RUNNING")
+
+
+func _get_direction_anim(dir: Vector2) -> String:
+	var x : float = sign(dir.x)
+	var y : float = sign(dir.y)
+
+	var anims := {
+		Vector2(1, 0): "move_d",
+		Vector2(-1, 0): "move_a",
+		Vector2(0, 1): "move_s",
+		Vector2(0, -1): "move_w",
+		Vector2(1, 1): "move_sd",
+		Vector2(-1, 1): "move_sa",
+		Vector2(1, -1): "move_wd",
+		Vector2(-1, -1): "move_wa",
+	}
+
+	return anims.get(Vector2(x, y), "idle")
 
 
 func _physics_process(delta: float) -> void:
 
-
-
-
-	var directionX := Input.get_axis("ui_left", "ui_right")
-	if directionX:
-		velocity.x = directionX * SPEED * delta
-		animation_player.play('move_a')
-
+	var direction := Vector2(
+		Input.get_axis("ui_left", "ui_right"),
+		Input.get_axis("ui_up", "ui_down")
+	)
+	if direction != Vector2.ZERO:
+		velocity = direction.normalized() * SPEED
+		var anim := _get_direction_anim(direction)
+		animation_player.play(anim)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
+		if (velocity == Vector2.ZERO):
+			animation_player.play("idle")
 	
-	var directionY := Input.get_axis("ui_up", "ui_down")
-	if directionY:
-		velocity.y = directionY * SPEED * delta
-		animation_player.play('move_w')
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-		
-
 	move_and_slide()
