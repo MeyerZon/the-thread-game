@@ -2,7 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://dem72xq2ta74p" path="res://assets/environment/TX Tileset Grass.png" id="1_6fv2f"]
 [ext_resource type="PackedScene" uid="uid://bnt6ynbsx65dl" path="res://scenes/player.tscn" id="1_h3dka"]
-[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="3_d1hwj"]
+[ext_resource type="Script" uid="uid://dcr4budsjgsix" path="res://scripts/temp_health_test.gd" id="4_oslck"]
+[ext_resource type="PackedScene" uid="uid://dx1hm54yce8ad" path="res://scenes/components/health_component.tscn" id="5_1k01j"]
+[ext_resource type="Texture2D" uid="uid://bnbnayugsxo66" path="res://icon.svg" id="6_hfoqy"]
+[ext_resource type="PackedScene" uid="uid://sgt4i01gce34" path="res://scenes/ui/ui_game_mobile.tscn" id="6_oslck"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_d1hwj"]
 a = Vector2(844, 0)
@@ -15,6 +18,9 @@ b = Vector2(-652, 0)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_6fv2f"]
 a = Vector2(1164, 0)
 b = Vector2(-1164, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bf4eo"]
+size = Vector2(106, 111)
 
 [node name="Level" type="Node2D" unique_id=2056147803]
 
@@ -58,8 +64,7 @@ position = Vector2(20, 4.7683716e-07)
 rotation = 1.5707964
 shape = SubResource("SegmentShape2D_6fv2f")
 
-[node name="Player" parent="." unique_id=1690763015 node_paths=PackedStringArray("joystick_movement") instance=ExtResource("1_h3dka")]
-joystick_movement = NodePath("../CanvasLayer/Virtual Joystick")
+[node name="Player" parent="." unique_id=1690763015 instance=ExtResource("1_h3dka")]
 SPEED = 900.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1924803685]
@@ -68,12 +73,32 @@ limit_top = -879
 limit_right = 1193
 limit_bottom = 871
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1999469980]
-
-[node name="Virtual Joystick" parent="CanvasLayer" unique_id=202352219 instance=ExtResource("3_d1hwj")]
+[node name="Label" type="Label" parent="Player" unique_id=1093625486]
+offset_left = -247.0
+offset_top = -100.0
+offset_right = 34.0
+offset_bottom = -77.0
+text = "Press Q to restart the timer (DEBUG)"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1210728739]
 color = Color(0.49747366, 0.49747372, 0.49747354, 1)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1603061594]
 rotation = -5.1347585
+
+[node name="TestObjectWithHealthAndReactable" type="Area2D" parent="." unique_id=234334407]
+position = Vector2(381, 0)
+script = ExtResource("4_oslck")
+
+[node name="HealthComponent" parent="TestObjectWithHealthAndReactable" unique_id=2075673247 instance=ExtResource("5_1k01j")]
+hp = 10
+max_hp = 15
+
+[node name="Sprite2D" type="Sprite2D" parent="TestObjectWithHealthAndReactable" unique_id=908757504]
+texture = ExtResource("6_hfoqy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestObjectWithHealthAndReactable" unique_id=708951292]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_bf4eo")
+
+[node name="UiGameMobile" parent="." unique_id=2102391580 instance=ExtResource("6_oslck")]

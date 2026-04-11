@@ -3,13 +3,23 @@ extends CharacterBody2D
 
 #Top Down controls, no need in falling here
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var decay_timer: DecayTimer = $DecayTimer
 
 @export var joystick_movement : VirtualJoystick
 @export var SPEED : float
 
 func _ready() -> void:
 	print("SCRIPT RUNNING")
+	decay_timer.element_decayed.connect(_on_decay_timer_decay)
+	decay_timer.start_timer(8)
+	
 
+func _input(event: InputEvent) -> void: # temp, to test timer reactivation
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_Q:
+			decay_timer.start_timer(5)
+
+	pass
 
 func _get_direction_anim(dir: Vector2) -> String:
 	var x : float = sign(dir.x)
@@ -45,3 +55,8 @@ func _physics_process(delta: float) -> void:
 			animation_player.play("idle")
 	
 	move_and_slide()
+
+func _on_decay_timer_decay() -> void:
+	print("DEBUG: ELement decayed (inside the Player component")
+	pass
+	

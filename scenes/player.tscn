@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bnt6ynbsx65dl"]
 
 [ext_resource type="Script" uid="uid://bgg1qtoq5aoor" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://dx1hm54yce8ad" path="res://scenes/components/health_component.tscn" id="2_3v2ag"]
 [ext_resource type="Shader" uid="uid://cj3tuftseesup" path="res://materials/player.gdshader" id="2_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://lpsx4cw3i5m3" path="res://resources/player/slimeSphere/slimeSphere_idle.tres" id="2_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://ctumiyyigtnb5" path="res://assets/player/slimeSphere/slimeSphere_walk_000_color_spritesheet.png" id="3_qhqgy"]
@@ -11,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dbgie7aibtqpu" path="res://assets/player/slimeSphere/slimeSphere_walk_225_color_spritesheet.png" id="7_f1ej7"]
 [ext_resource type="Texture2D" uid="uid://b8exf0kc6crsu" path="res://assets/player/slimeSphere/slimeSphere_walk_045_color_spritesheet.png" id="9_oprun"]
 [ext_resource type="Texture2D" uid="uid://nd8dblc72ghq" path="res://assets/player/slimeSphere/slimeSphere_walk_315_color_spritesheet.png" id="10_a8ls1"]
+[ext_resource type="PackedScene" uid="uid://wlad2su3ibpc" path="res://scenes/components/decay_timer_component.tscn" id="13_jej6c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d2wvv"]
 shader = ExtResource("2_d2wvv")
@@ -1256,12 +1258,13 @@ _data = {
 [node name="Player" type="CharacterBody2D" unique_id=1690763015]
 script = ExtResource("1_3vyb7")
 
+[node name="HealthComponent" parent="." unique_id=2075673247 instance=ExtResource("2_3v2ag")]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=124634458]
 material = SubResource("ShaderMaterial_d2wvv")
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_qhqgy")
 animation = &"move_w"
-frame = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2089237497]
 rotation = -1.5707964
@@ -1270,3 +1273,7 @@ shape = SubResource("CapsuleShape2D_qhqgy")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=246946169]
 libraries/ = SubResource("AnimationLibrary_d2wvv")
 autoplay = &"idle"
+
+[node name="DecayTimer" parent="." unique_id=333997073 instance=ExtResource("13_jej6c")]
+position = Vector2(17, -32)
+scale = Vector2(2.0000024, 2.0000024)
