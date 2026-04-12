@@ -1265,6 +1265,7 @@ material = SubResource("ShaderMaterial_d2wvv")
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_qhqgy")
 animation = &"move_w"
+frame = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2089237497]
 rotation = -1.5707964
