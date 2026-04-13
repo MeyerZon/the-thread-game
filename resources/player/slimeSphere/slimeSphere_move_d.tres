@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://b6xqget7cdf5g"]
+
+[ext_resource type="Texture2D" uid="uid://camjum4xmg81k" path="res://assets/player/slimeSphere/slimeSphere_walk_270_color_spritesheet.png" id="1_7q3nr"]
+[ext_resource type="Texture2D" uid="uid://beb1tdkqi63f5" path="res://assets/player/slimeSphere/slimeSphere_walk_270_normal_spritesheet.png" id="2_o24ql"]
+
+[resource]
+diffuse_texture = ExtResource("1_7q3nr")
+normal_texture = ExtResource("2_o24ql")
