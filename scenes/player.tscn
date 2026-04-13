@@ -14,6 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://lkjfqiccd8qk" path="res://resources/player/slimeSphere/slimeSphere_move_wd.tres" id="12_f1ej7"]
 [ext_resource type="PackedScene" uid="uid://wlad2su3ibpc" path="res://scenes/components/decay_timer_component.tscn" id="13_jej6c"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
+radius = 20.0
+height = 42.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d2wvv"]
 shader = ExtResource("2_d2wvv")
 shader_parameter/hue = 0.0
@@ -509,10 +513,6 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
-radius = 20.0
-height = 42.0
-
 [sub_resource type="Animation" id="Animation_d2wvv"]
 length = 0.001
 tracks/0/type = "value"
@@ -810,6 +810,10 @@ _data = {
 [node name="Player" type="CharacterBody2D" unique_id=1690763015]
 script = ExtResource("1_3vyb7")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2089237497]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_qhqgy")
+
 [node name="HealthComponent" parent="." unique_id=2075673247 instance=ExtResource("2_3v2ag")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=124634458]
@@ -818,10 +822,6 @@ position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_qhqgy")
 animation = &"move_w"
 frame = 6
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2089237497]
-rotation = -1.5707964
-shape = SubResource("CapsuleShape2D_qhqgy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=246946169]
 libraries/ = SubResource("AnimationLibrary_d2wvv")

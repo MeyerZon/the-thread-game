@@ -85,7 +85,7 @@ color = Color(0.49747366, 0.49747372, 0.49747354, 1)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1603061594]
 position = Vector2(-427.00006, -50.000008)
-rotation = -5.1347585
+rotation = 0.30194196
 
 [node name="TestObjectWithHealthAndReactable" type="Area2D" parent="." unique_id=234334407]
 position = Vector2(381, 0)
