@@ -808,6 +808,8 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=1690763015]
+collision_layer = 2
+collision_mask = 901
 script = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2089237497]

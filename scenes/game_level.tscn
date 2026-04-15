@@ -28,40 +28,26 @@ size = Vector2(106, 111)
 scale = Vector2(9.096664, 6.6236577)
 texture = ExtResource("1_6fv2f")
 
-[node name="WorldWalls" type="Node2D" parent="." unique_id=404861258]
+[node name="WorldWalls" type="StaticBody2D" parent="." unique_id=1848718640]
 position = Vector2(-581, -322)
+collision_mask = 0
 
-[node name="LeftWallStaticBody" type="StaticBody2D" parent="WorldWalls" unique_id=1429539257]
+[node name="LeftWallCollision" type="CollisionShape2D" parent="WorldWalls" unique_id=1296852247]
 position = Vector2(-584, 324)
-
-[node name="LeftWallCollision" type="CollisionShape2D" parent="WorldWalls/LeftWallStaticBody" unique_id=1296852247]
 rotation = 1.5707964
 shape = SubResource("SegmentShape2D_d1hwj")
 
-[node name="RightWallStaticBody" type="StaticBody2D" parent="WorldWalls" unique_id=19054087]
-position = Vector2(1756, 324)
-
-[node name="RightWallCollision" type="CollisionShape2D" parent="WorldWalls/RightWallStaticBody" unique_id=1036123981]
-position = Vector2(-16, -196)
+[node name="RightWallCollision" type="CollisionShape2D" parent="WorldWalls" unique_id=1036123981]
+position = Vector2(1740, 128)
 rotation = 1.5707964
 shape = SubResource("SegmentShape2D_3tmo4")
 
-[node name="TopWallStaticBody" type="StaticBody2D" parent="WorldWalls" unique_id=1206861436]
-position = Vector2(576, -504)
-rotation = -1.5707964
-
-[node name="TopWallCollision" type="CollisionShape2D" parent="WorldWalls/TopWallStaticBody" unique_id=665922631]
-position = Vector2(20, 4.7683716e-07)
-rotation = 1.5707964
+[node name="TopWallCollision" type="CollisionShape2D" parent="WorldWalls" unique_id=665922631]
+position = Vector2(576, -524)
 shape = SubResource("SegmentShape2D_6fv2f")
 
-[node name="DownWallStaticBody" type="StaticBody2D" parent="WorldWalls" unique_id=1258831747]
-position = Vector2(576, 1188)
-rotation = -1.5707964
-
-[node name="DownWallCollision" type="CollisionShape2D" parent="WorldWalls/DownWallStaticBody" unique_id=1913040039]
-position = Vector2(20, 4.7683716e-07)
-rotation = 1.5707964
+[node name="DownWallCollision" type="CollisionShape2D" parent="WorldWalls" unique_id=1913040039]
+position = Vector2(576, 1168)
 shape = SubResource("SegmentShape2D_6fv2f")
 
 [node name="Player" parent="." unique_id=1690763015 instance=ExtResource("1_h3dka")]
@@ -88,7 +74,8 @@ position = Vector2(-427.00006, -50.000008)
 rotation = 0.30194196
 
 [node name="TestObjectWithHealthAndReactable" type="Area2D" parent="." unique_id=234334407]
-position = Vector2(381, 0)
+position = Vector2(382, 0)
+collision_layer = 64
 script = ExtResource("4_oslck")
 
 [node name="HealthComponent" parent="TestObjectWithHealthAndReactable" unique_id=2075673247 instance=ExtResource("5_1k01j")]
