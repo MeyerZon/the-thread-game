@@ -1,0 +1,54 @@
+name: Deploy web build to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'build/web/**'
+      - '.github/workflows/deploy-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare site (rename Godot entry to index.html if needed)
+        run: |
+          cd build/web
+          if [ ! -f index.html ]; then
+            html=$(ls *.html | head -n1)
+            if [ -n "$html" ]; then
+              mv "$html" index.html
+            fi
+          fi
+          # GitHub Pages needs these headers for SharedArrayBuffer (Godot 4 web export).
+          # Provide a fallback via a no-jekyll marker; actual COOP/COEP must be set
+          # through a service worker that Godot's export already includes.
+          touch .nojekyll
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/web
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
