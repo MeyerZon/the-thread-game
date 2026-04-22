@@ -22,7 +22,7 @@ https://github.com/user-attachments/assets/915d6b73-74b2-46b1-be15-53635335be2b
 
 ## The thread
 
-_TODO: link to the SpaceBattles thread once it's live._
+[Thread Link](https://forums.spacebattles.com/threads/the-thread-game-you-suggest-i-build.1303407/)
 
 If you want to influence the direction of the game, the thread is
 the place. Suggestions, votes, jokes, and unhinged feature requests
