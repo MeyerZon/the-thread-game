@@ -206,6 +206,49 @@ Other notes:
   hopeless, it's usually faster to redo the change on top of the
   updated scene than to resolve the conflict by hand.
 
+## AI-assisted contributions
+
+- **Code: allowed.** Using an AI assistant (Copilot, Cursor, Claude,
+  ChatGPT, etc.) to help write GDScript, editor tooling, or CI is
+  fine. You are still responsible for everything you submit: it must
+  follow the style and architecture rules above, you must understand
+  how it works, and you must test it.
+- **Shaders: allowed.** Shaders are code and fall under the same
+  rules as GDScript — AI assistance is fine, same responsibility to
+  review and test.
+- **Generative AI for assets: not allowed.** No AI-generated images,
+  sprites, textures, 3D models, animations, music, or sound effects.
+  This includes mixed workflows (e.g. AI-generated base that you
+  paint over). If the pixels or samples originated from a generative
+  model, it does not belong in this repo.
+
+## Adding assets
+
+Third-party assets are welcome as long as their license permits
+redistribution under an open-source project.
+
+- **Check the license first.** Any asset you add must be one of:
+  1. **Your own original work**, which you are contributing under the
+     project's license.
+  2. **Licensed for redistribution** — CC0, CC-BY, CC-BY-SA, OFL,
+     public domain, or similar. "Free to use" on an asset-pack site
+     is not enough; the license has to explicitly allow
+     redistribution, since this is a public repo and anyone can
+     download the source.
+  3. **Explicitly permitted by the author** — if the license is
+     ambiguous or restrictive, get written permission from the
+     author (email is fine) before adding the asset. Keep the email
+     / permission record; a reviewer may ask for it.
+- **Attribute properly.** For any third-party asset, record the
+  source, author, and license. At minimum, add an entry to a
+  top-level `CREDITS.md` (create it if it doesn't exist yet) with:
+  - file path in this repo,
+  - original asset name and URL,
+  - author,
+  - license (and license URL if the asset requires it, e.g. CC-BY).
+- **No "I'll sort out the license later".** PRs that add assets
+  without a clear license trail will be asked to revert them.
+
 ## Exporting / CI
 
 - The `Web` export preset in `export_presets.cfg` outputs to
