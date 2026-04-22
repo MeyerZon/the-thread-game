@@ -7,20 +7,19 @@ script = ExtResource("1_o5qli")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=141339745]
 
-[node name="PlayGameButton" type="Button" parent="CanvasLayer" unique_id=1779283215]
-offset_left = 412.0
-offset_top = 285.00003
-offset_right = 595.30225
-offset_bottom = 401.61435
-scale = Vector2(5.689151, 4.366747)
-text = "PLAY"
-
-[node name="LinkButton" type="LinkButton" parent="CanvasLayer" unique_id=1309647091]
-offset_left = 773.0
-offset_top = 909.0
-offset_right = 943.0
-offset_bottom = 949.0
+[node name="FunnyButton" type="LinkButton" parent="CanvasLayer" unique_id=1309647091]
+offset_left = 461.0
+offset_top = 519.0
+offset_right = 631.0
+offset_bottom = 559.0
 text = "Press Me if you dare :)"
 uri = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
-[connection signal="pressed" from="CanvasLayer/PlayGameButton" to="." method="_on_play_game_button_pressed"]
+[node name="PlayButton" type="Button" parent="CanvasLayer" unique_id=2108233384]
+offset_left = 430.0
+offset_top = 191.0
+offset_right = 730.0
+offset_bottom = 491.0
+text = "Play"
+
+[connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_play_button_pressed"]
