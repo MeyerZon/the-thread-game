@@ -2,9 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://dem72xq2ta74p" path="res://assets/environment/TX Tileset Grass.png" id="1_6fv2f"]
 [ext_resource type="PackedScene" uid="uid://bnt6ynbsx65dl" path="res://scenes/player.tscn" id="1_h3dka"]
-[ext_resource type="Script" uid="uid://dcr4budsjgsix" path="res://scripts/temp_health_test.gd" id="4_oslck"]
-[ext_resource type="PackedScene" uid="uid://dx1hm54yce8ad" path="res://scenes/components/health_component.tscn" id="5_1k01j"]
-[ext_resource type="Texture2D" uid="uid://bnbnayugsxo66" path="res://icon.svg" id="6_hfoqy"]
 [ext_resource type="PackedScene" uid="uid://sgt4i01gce34" path="res://scenes/ui/ui_game_mobile.tscn" id="6_oslck"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_d1hwj"]
@@ -18,9 +15,6 @@ b = Vector2(-652, 0)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_6fv2f"]
 a = Vector2(1164, 0)
 b = Vector2(-1164, 4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bf4eo"]
-size = Vector2(106, 111)
 
 [node name="Level" type="Node2D" unique_id=2056147803]
 
@@ -72,21 +66,5 @@ color = Color(0.49747366, 0.49747372, 0.49747354, 1)
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1603061594]
 position = Vector2(-427.00006, -50.000008)
 rotation = 0.30194196
-
-[node name="TestObjectWithHealthAndReactable" type="Area2D" parent="." unique_id=234334407]
-position = Vector2(382, 0)
-collision_layer = 64
-script = ExtResource("4_oslck")
-
-[node name="HealthComponent" parent="TestObjectWithHealthAndReactable" unique_id=2075673247 instance=ExtResource("5_1k01j")]
-hp = 10
-max_hp = 15
-
-[node name="Sprite2D" type="Sprite2D" parent="TestObjectWithHealthAndReactable" unique_id=908757504]
-texture = ExtResource("6_hfoqy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TestObjectWithHealthAndReactable" unique_id=708951292]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_bf4eo")
 
 [node name="UiGameMobile" parent="." unique_id=2102391580 instance=ExtResource("6_oslck")]
