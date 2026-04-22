@@ -830,5 +830,5 @@ libraries/ = SubResource("AnimationLibrary_d2wvv")
 autoplay = &"idle"
 
 [node name="DecayTimer" parent="." unique_id=333997073 instance=ExtResource("13_jej6c")]
-position = Vector2(17, -32)
-scale = Vector2(2.0000024, 2.0000024)
+position = Vector2(20, -30.000002)
+scale = Vector2(1.8, 1.8)
