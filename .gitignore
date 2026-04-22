@@ -18,5 +18,4 @@ data_*/
 mono_crash.*.json
 
 # Local-only working folders
-build/
 blender/
