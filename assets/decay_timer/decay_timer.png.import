@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3h5grmwyqb1c"
-path="res://.godot/imported/Loading_Icon.png-677c75dee01713220aafe36a798a7502.ctex"
+uid="uid://sioqoenf73dv"
+path="res://.godot/imported/decay_timer.png-48356a090f0c11d514194db8e5afaa98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/decay_timer/Loading_Icon.png"
-dest_files=["res://.godot/imported/Loading_Icon.png-677c75dee01713220aafe36a798a7502.ctex"]
+source_file="res://assets/decay_timer/decay_timer.png"
+dest_files=["res://.godot/imported/decay_timer.png-48356a090f0c11d514194db8e5afaa98.ctex"]
 
 [params]
 
