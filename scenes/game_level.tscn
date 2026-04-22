@@ -1,8 +1,25 @@
 [gd_scene format=3 uid="uid://c06e47ubvrs7c"]
 
-[ext_resource type="Texture2D" uid="uid://dem72xq2ta74p" path="res://assets/environment/TX Tileset Grass.png" id="1_6fv2f"]
 [ext_resource type="PackedScene" uid="uid://bnt6ynbsx65dl" path="res://scenes/player.tscn" id="1_h3dka"]
 [ext_resource type="PackedScene" uid="uid://sgt4i01gce34" path="res://scenes/ui/ui_game_mobile.tscn" id="6_oslck"]
+
+[sub_resource type="Gradient" id="Gradient_6fv2f"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d1hwj"]
+gradient = SubResource("Gradient_6fv2f")
+fill_from = Vector2(0.7393162, 0.77350426)
+fill_to = Vector2(0.2735043, 0.5641026)
+
+[sub_resource type="Gradient" id="Gradient_3tmo4"]
+colors = PackedColorArray(0.5577358, 0.19578564, 0.99999994, 1, 0.6908794, 0.5164514, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hjd5e"]
+gradient = SubResource("Gradient_3tmo4")
+fill_to = Vector2(0.45726496, 0.4871795)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6fv2f"]
+diffuse_texture = SubResource("GradientTexture2D_d1hwj")
+normal_texture = SubResource("GradientTexture2D_hjd5e")
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_d1hwj"]
 a = Vector2(844, 0)
@@ -19,8 +36,8 @@ b = Vector2(-1164, 4)
 [node name="Level" type="Node2D" unique_id=2056147803]
 
 [node name="BackGround" type="Sprite2D" parent="." unique_id=329126199]
-scale = Vector2(9.096664, 6.6236577)
-texture = ExtResource("1_6fv2f")
+scale = Vector2(36.237, 26.344)
+texture = SubResource("CanvasTexture_6fv2f")
 
 [node name="WorldWalls" type="StaticBody2D" parent="." unique_id=1848718640]
 position = Vector2(-581, -322)
