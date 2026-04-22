@@ -9,6 +9,15 @@ and a handful of reusable components (health, decay timer, virtual
 joystick, etc.) sitting on top of a Godot Web build pipeline. What
 it *becomes* depends on the thread.
 
+**▶ Video Demonstration**
+
+
+https://github.com/user-attachments/assets/915d6b73-74b2-46b1-be15-53635335be2b
+
+
+
+
+
 **▶ Play in your browser:** https://meyerzon.github.io/the-thread-game/
 
 ## The thread
