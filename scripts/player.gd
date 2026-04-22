@@ -8,6 +8,8 @@ extends CharacterBody2D
 @export var joystick_movement : VirtualJoystick
 @export var SPEED : float
 
+
+
 func _ready() -> void:
 	print("SCRIPT RUNNING")
 	decay_timer.element_decayed.connect(_on_decay_timer_decay)
@@ -16,6 +18,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void: # temp, to test timer reactivation
 	if event is InputEventKey:
+		print("Key pressed:", event.keycode)
 		if event.pressed and event.keycode == KEY_Q:
 			decay_timer.start_timer(5)
 
