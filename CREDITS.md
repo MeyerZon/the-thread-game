@@ -24,16 +24,31 @@ Each entry should include:
 - **Name:** Virtual Joystick — a simple virtual joystick for
   touchscreens.
 - **Author:** Marco Fazio
-- **Source:** _TODO: fill in the Godot Asset Library / GitHub URL the
-  addon was pulled from._
-- **License:** _TODO: confirm and record the license (e.g. MIT). The
-  addon as shipped does not include a LICENSE file; verify against
-  the original source before the next public release._
+- **Source:** https://github.com/MarcoFazioRandom/Virtual-Joystick-Godot
+- **License:** MIT
 - **Notes:** —
 
 ---
 
 ## Art
+
+### Original assets — pipeline notes
+
+Some character art in this project isn't hand-drawn pixel art — it's
+made by modelling and animating a character in 3D (Blender) and then
+rendering the animation out as a pixel-art spritesheet. The Blender
+source file lives alongside the exported frames so contributors can
+reproduce or extend the animation set.
+
+- **Slime character** — modelled/animated in Blender, rendered to
+  pixel art.
+  - Blender source: `blender/slime.blend`
+
+The `blender/` directory is otherwise git-ignored (it's a working
+folder); only source files we want to ship are explicitly whitelisted
+in `.gitignore`.
+
+### Third-party art
 
 _No third-party art currently bundled. Add entries here when
 importing sprites, textures, tilesets, icons, fonts, etc._
