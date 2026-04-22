@@ -1,0 +1,63 @@
+Modified MIT License
+
+Copyright (c) [YEAR] [YOUR NAME OR PROJECT NAME]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software subject to the following conditions:
+
+1. PERMITTED USES
+
+   You are permitted to:
+   (a) play, run, and use the Software for personal or private purposes;
+   (b) study, examine, and modify the source code;
+   (c) build, compile, and create derivative works from the source code;
+   (d) fork the repository and share source-code modifications via public
+       source code repositories (e.g., GitHub, GitLab) for the purposes of
+       collaboration, contribution, or personal experimentation;
+   (e) submit pull requests, patches, issues, and suggestions to the official
+       project repository.
+
+2. RESTRICTED USES
+
+   The following actions are NOT permitted without prior written permission
+   from the copyright holder:
+   (a) redistributing the Software, in whole or in part, in compiled, packaged,
+       built, or otherwise playable form on any website, platform, app store,
+       game portal, mirror, or distribution service;
+   (b) hosting playable builds of the Software for public access;
+   (c) bundling the Software with other products for distribution;
+   (d) any form of commercial redistribution.
+
+   To request redistribution permission, contact: [YOUR CONTACT EMAIL]
+
+3. CONTRIBUTIONS
+
+   By submitting a pull request, patch, commit, asset, or any other
+   contribution ("Contribution") to the official project repository, you agree
+   that:
+   (a) you have the right to submit the Contribution, and it is your own
+       original work or you have permission from the rightful owner;
+   (b) you grant the copyright holder a perpetual, worldwide, non-exclusive,
+       royalty-free, irrevocable license to use, reproduce, modify, adapt,
+       publish, sublicense, and distribute your Contribution as part of the
+       Software under this License or any future license chosen by the
+       copyright holder;
+   (c) your Contribution becomes part of the Software and is subject to all
+       terms of this License, including the redistribution restrictions in
+       Section 2.
+
+4. CONDITIONS
+
+   The above copyright notice and this permission notice shall be included in
+   all copies or substantial portions of the Software.
+
+5. DISCLAIMER
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+   DEALINGS IN THE SOFTWARE.
