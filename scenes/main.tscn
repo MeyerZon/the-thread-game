@@ -17,9 +17,9 @@ uri = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
 [node name="PlayButton" type="Button" parent="CanvasLayer" unique_id=2108233384]
 offset_left = 430.0
-offset_top = 191.0
+offset_top = 190.0
 offset_right = 730.0
-offset_bottom = 491.0
+offset_bottom = 490.0
 text = "Play"
 
 [connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_play_button_pressed"]
